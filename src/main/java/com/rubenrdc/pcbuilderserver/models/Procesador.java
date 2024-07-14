@@ -2,6 +2,7 @@ package com.rubenrdc.pcbuilderserver.models;
 
 import java.io.Serializable;
 import javax.swing.ImageIcon;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -21,8 +22,8 @@ public class Procesador extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Procesador(ImageIcon imagen, String title, String marca, int Ncores, int NThreads, int frequencyTurbo) {
-        super(imagen, title, marca);
+    public Procesador(ObjectId id,ImageIcon imagen, String title, String marca, int Ncores, int NThreads, int frequencyTurbo) {
+        super(id,imagen, title, marca);
         this.Ncores = Ncores;
         this.NThreads = NThreads;
         this.frequencyTurbo = frequencyTurbo;

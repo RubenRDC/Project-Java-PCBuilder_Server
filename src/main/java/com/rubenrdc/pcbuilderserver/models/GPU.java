@@ -2,6 +2,7 @@ package com.rubenrdc.pcbuilderserver.models;
 
 import java.io.Serializable;
 import javax.swing.ImageIcon;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -20,8 +21,8 @@ public class GPU extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public GPU(ImageIcon imagen, String title, String marca, String Serie, int MemoryVRam) {
-        super(imagen, title, marca);
+    public GPU(ObjectId id,ImageIcon imagen, String title, String marca, String Serie, int MemoryVRam) {
+        super(id,imagen, title, marca);
         this.Serie = Serie;
         this.MemoryVRam = MemoryVRam;
     }

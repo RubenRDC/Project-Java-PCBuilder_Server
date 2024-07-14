@@ -2,6 +2,7 @@ package com.rubenrdc.pcbuilderserver.models;
 
 import java.io.Serializable;
 import javax.swing.ImageIcon;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -19,8 +20,8 @@ public class Cooler extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Cooler(ImageIcon imagen, String title, String marca, String Type, int TDP) {
-        super(imagen, title, marca);
+    public Cooler(ObjectId id, ImageIcon imagen, String title, String marca, String Type, int TDP) {
+        super(id, imagen, title, marca);
         this.Type = Type;
         this.TDP = TDP;
     }
@@ -56,7 +57,7 @@ public class Cooler extends Articulo implements Serializable {
     public int getSizeCoolerFans() {
         return sizeCoolerFans;
     }
-    
+
     public Object[] getRow() {
         row = new Object[4];
         row[0] = super.getTitle();
