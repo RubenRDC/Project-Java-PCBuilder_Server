@@ -26,6 +26,10 @@ public class Articulo implements Comparable {
         this.marca = marca;
     }
 
+    public ObjectId getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
     }
