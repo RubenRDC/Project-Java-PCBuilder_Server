@@ -25,6 +25,13 @@ public class Articulo implements Comparable {
         this.title = title;
         this.marca = marca;
     }
+    public Articulo(ObjectId id,ImageIcon imagen, String title, String marca,String oficialDocumentation) {
+        this.id=id;
+        this.imagen = imagen;
+        this.title = title;
+        this.marca = marca;
+        this.oficialDocumentation=oficialDocumentation;
+    }
 
     public ObjectId getId() {
         return id;

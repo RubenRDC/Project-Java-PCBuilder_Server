@@ -25,7 +25,19 @@ public class Cooler extends Articulo implements Serializable {
         this.Type = Type;
         this.TDP = TDP;
     }
-
+    //Complete Info
+    public Cooler(ObjectId id, ImageIcon imagen, String title, String marca,int TDP, int highCooler, int sizeCooler, int sizeCoolerFans, int EnergyConsumption, int CoolersFans, String Socket, String Type,String oficialDocumentation) {
+        super(id, imagen, title, marca, oficialDocumentation);
+        this.TDP = TDP;
+        this.highCooler = highCooler;
+        this.sizeCooler = sizeCooler;
+        this.sizeCoolerFans = sizeCoolerFans;
+        this.EnergyConsumption = EnergyConsumption;
+        this.CoolersFans = CoolersFans;
+        this.Socket = Socket;
+        this.Type = Type;
+    }
+    
     public int getTDP() {
         return TDP;
     }

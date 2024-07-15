@@ -24,10 +24,37 @@ public class Gabinete extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Gabinete(ObjectId id,ImageIcon imagen, String title, String marca, String FactorMother, String PowerFactor) {
-        super(id,imagen, title, marca);
+    public Gabinete(ObjectId id, ImageIcon imagen, String title, String marca, String FactorMother, String PowerFactor) {
+        super(id, imagen, title, marca);
         this.FactorMother = FactorMother;
         this.PowerFactor = PowerFactor;
+    }
+
+    //Complete Info
+    public Gabinete(ObjectId id, ImageIcon imagen, String title, String marca, String FactorMother, String PowerFactor, boolean Window, boolean SoportWaterRadiator, int TypeWindow, int Width, int Height, int Length, int MaxSoportCoolerHeight, int SoportCoolersFan80, int SoportCoolersFan120, int SoportCoolersFan140, int SoportCoolersFan200, int SoportRadiator240, int SoportRadiator280, int SoportRadiator360, int SoportRadiator420, int StorageSlots, int SoportFactor2_5, int SoportFactor3_25, int SoportFactor3_5, int SoportFactor5_25, String oficialDocumentation) {
+        super(id, imagen, title, marca, oficialDocumentation);
+        this.FactorMother = FactorMother;
+        this.PowerFactor = PowerFactor;
+        this.Window = Window;
+        this.SoportWaterRadiator = SoportWaterRadiator;
+        this.TypeWindow = TypeWindow;
+        this.Width = Width;
+        this.Height = Height;
+        this.Length = Length;
+        this.MaxSoportCoolerHeight = MaxSoportCoolerHeight;
+        this.SoportCoolersFan80 = SoportCoolersFan80;
+        this.SoportCoolersFan120 = SoportCoolersFan120;
+        this.SoportCoolersFan140 = SoportCoolersFan140;
+        this.SoportCoolersFan200 = SoportCoolersFan200;
+        this.SoportRadiator240 = SoportRadiator240;
+        this.SoportRadiator280 = SoportRadiator280;
+        this.SoportRadiator360 = SoportRadiator360;
+        this.SoportRadiator420 = SoportRadiator420;
+        this.StorageSlots = StorageSlots;
+        this.SoportFactor2_5 = SoportFactor2_5;
+        this.SoportFactor3_25 = SoportFactor3_25;
+        this.SoportFactor3_5 = SoportFactor3_5;
+        this.SoportFactor5_25 = SoportFactor5_25;
     }
 
     public String getFactorMother() {

@@ -26,6 +26,19 @@ public class Fuente extends Articulo implements Serializable {
         this.RealWatts = RealWatts;
         this.Factor = Factor;
     }
+    //Complete Info
+    public Fuente(ObjectId id, ImageIcon imagen, String title, String marca,int RatedWatts, int RealWatts, int SataConnections, String WiringType, String Certification, String Factor, boolean Pin24Connector, boolean IncludeCable, String oficialDocumentation) {
+        super(id, imagen, title, marca, oficialDocumentation);
+        this.RatedWatts = RatedWatts;
+        this.RealWatts = RealWatts;
+        this.SataConnections = SataConnections;
+        this.WiringType = WiringType;
+        this.Certification = Certification;
+        this.Factor = Factor;
+        this.Pin24Connector = Pin24Connector;
+        this.IncludeCable = IncludeCable;
+    }
+    
 
     public int getRatedWatts() {
         return RatedWatts;

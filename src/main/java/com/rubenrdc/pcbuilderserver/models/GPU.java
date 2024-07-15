@@ -15,16 +15,34 @@ public class GPU extends Articulo implements Serializable {
     private String Type, ChipsetGpu, Serie, TypeMemory;
     private int VGA, DVI, HDMI, DisplayPorts, Height, Length, EnergyConsumption, MemoryVRam, SpeedMemory, RecommMinimWatts;
     private Object row[];
-    
+
     public GPU(String title, String marca) {
         super(title, marca);
     }
 
     //Basic Information
-    public GPU(ObjectId id,ImageIcon imagen, String title, String marca, String Serie, int MemoryVRam) {
-        super(id,imagen, title, marca);
+    public GPU(ObjectId id, ImageIcon imagen, String title, String marca, String Serie, int MemoryVRam) {
+        super(id, imagen, title, marca);
         this.Serie = Serie;
         this.MemoryVRam = MemoryVRam;
+    }
+    //Complete Info
+    public GPU(ObjectId id, ImageIcon imagen, String title, String marca, String Type, String ChipsetGpu, String Serie, String TypeMemory, int VGA, int DVI, int HDMI, int DisplayPorts, int Height, int Length, int EnergyConsumption, int MemoryVRam, int SpeedMemory, int RecommMinimWatts, String oficialDocumentation) {
+        super(id, imagen, title, marca, oficialDocumentation);
+        this.Type = Type;
+        this.ChipsetGpu = ChipsetGpu;
+        this.Serie = Serie;
+        this.TypeMemory = TypeMemory;
+        this.VGA = VGA;
+        this.DVI = DVI;
+        this.HDMI = HDMI;
+        this.DisplayPorts = DisplayPorts;
+        this.Height = Height;
+        this.Length = Length;
+        this.EnergyConsumption = EnergyConsumption;
+        this.MemoryVRam = MemoryVRam;
+        this.SpeedMemory = SpeedMemory;
+        this.RecommMinimWatts = RecommMinimWatts;
     }
 
     public String getType() {
@@ -82,6 +100,7 @@ public class GPU extends Articulo implements Serializable {
     public int getRecommMinimWatts() {
         return RecommMinimWatts;
     }
+
     public Object[] getRow() {
         row = new Object[4];
         row[0] = super.getTitle();

@@ -29,6 +29,20 @@ public class Almacenamiento extends Articulo implements Serializable {
         this.Type = Type;
         this.Factor = Factor;
     }
+    //Complete Info
+    public Almacenamiento(ObjectId id, ImageIcon imagen, String title, String marca, String Type, String Factor,String ConnectionType,String Interface,int Capacity,int Cache,int MaxReadSquential,int MaxWriteSquential,int EnergyConsumption,int UsefulLife,String oficialDocumentation) {
+        super(id, imagen, title, marca,oficialDocumentation);
+        this.Type = Type;
+        this.Factor = Factor;
+        this.ConnectionType=ConnectionType;
+        this.Interface=Interface;
+        this.Capacity=Capacity;
+        this.Cache=Cache;
+        this.MaxReadSquential=MaxReadSquential;
+        this.MaxWriteSquential=MaxWriteSquential;
+        this.EnergyConsumption=EnergyConsumption;
+        this.UsefulLife=UsefulLife;
+    }
 
     public String getType() {
         return Type;

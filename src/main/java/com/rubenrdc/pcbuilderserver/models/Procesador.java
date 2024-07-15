@@ -22,11 +22,27 @@ public class Procesador extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Procesador(ObjectId id,ImageIcon imagen, String title, String marca, int Ncores, int NThreads, int frequencyTurbo) {
-        super(id,imagen, title, marca);
+    public Procesador(ObjectId id, ImageIcon imagen, String title, String marca, int Ncores, int NThreads, int frequencyTurbo) {
+        super(id, imagen, title, marca);
         this.Ncores = Ncores;
         this.NThreads = NThreads;
         this.frequencyTurbo = frequencyTurbo;
+    }
+
+    //Complete Info
+    public Procesador(ObjectId id, ImageIcon imagen, String title, String marca, int Ncores, int NThreads, int TDP, int frequencyMaxRam, double frequencyBase, double frequencyTurbo, String ChipsetGPU, String Socket, String TypeMemory, String Family, boolean includeCooler, String oficialDocumentation) {
+        super(id, imagen, title, marca, oficialDocumentation);
+        this.Ncores = Ncores;
+        this.NThreads = NThreads;
+        this.TDP = TDP;
+        this.frequencyMaxRam = frequencyMaxRam;
+        this.frequencyBase = frequencyBase;
+        this.frequencyTurbo = frequencyTurbo;
+        this.ChipsetGPU = ChipsetGPU;
+        this.Socket = Socket;
+        this.TypeMemory = TypeMemory;
+        this.Family = Family;
+        this.includeCooler = includeCooler;
     }
 
     public int getNcores() {
