@@ -22,7 +22,7 @@ public class Procesador extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Procesador(ObjectId id, ImageIcon imagen, String title, String marca, int Ncores, int NThreads, int frequencyTurbo) {
+    public Procesador(ObjectId id, ImageIcon imagen, String title, String marca, int Ncores, int NThreads, double frequencyTurbo) {
         super(id, imagen, title, marca);
         this.Ncores = Ncores;
         this.NThreads = NThreads;

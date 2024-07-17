@@ -21,7 +21,6 @@ import org.bson.types.ObjectId;
 public class MotherBoardDao implements Utilities {
 
     private static final DaoConnection dao = new DaoConnection();
-    public static final int TYPE_INTEL = 0, TYPE_AMD = 1;
 
     public static List<MotherBoard> getListMothers(String family, String socket) {
         //String Family AMD/INTEL
