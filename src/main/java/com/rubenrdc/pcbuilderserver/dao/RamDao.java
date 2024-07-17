@@ -48,7 +48,7 @@ public class RamDao {
             Ram p = null;
 
             Bson filter = Filters.eq("_id", id);
-            FindIterable<Document> genericQuery = dao.genericQuery("Cooler", filter);
+            FindIterable<Document> genericQuery = dao.genericQuery("Ram", filter);
             Document doc = genericQuery.first();
 
             if (doc != null) {

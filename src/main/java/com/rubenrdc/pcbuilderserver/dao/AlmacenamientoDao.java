@@ -46,7 +46,7 @@ public class AlmacenamientoDao {
             Almacenamiento g = null;
 
             Bson filter = Filters.eq("_id", id);
-            FindIterable<Document> genericQuery = dao.genericQuery("Cooler", filter);
+            FindIterable<Document> genericQuery = dao.genericQuery("Almacenamiento", filter);
             Document doc = genericQuery.first();
 
             if (doc != null) {

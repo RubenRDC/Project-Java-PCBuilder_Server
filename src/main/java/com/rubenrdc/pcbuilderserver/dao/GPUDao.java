@@ -48,7 +48,7 @@ public class GPUDao {
             GPU g = null;
 
             Bson filter = Filters.eq("_id", id);
-            FindIterable<Document> genericQuery = dao.genericQuery("Cooler", filter);
+            FindIterable<Document> genericQuery = dao.genericQuery("GPU", filter);
             Document doc = genericQuery.first();
 
             if (doc != null) {
