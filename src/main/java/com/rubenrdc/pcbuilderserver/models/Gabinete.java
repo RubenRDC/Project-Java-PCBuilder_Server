@@ -31,7 +31,7 @@ public class Gabinete extends Articulo implements Serializable {
     }
 
     //Complete Info
-    public Gabinete(ObjectId id, ImageIcon imagen, String title, String marca, String FactorMother, String PowerFactor, boolean Window, boolean SoportWaterRadiator, int TypeWindow, int Width, int Height, int Length, int MaxSoportCoolerHeight, int SoportCoolersFan80, int SoportCoolersFan120, int SoportCoolersFan140, int SoportCoolersFan200, int SoportRadiator240, int SoportRadiator280, int SoportRadiator360, int SoportRadiator420, int StorageSlots, int SoportFactor2_5, int SoportFactor3_25, int SoportFactor3_5, int SoportFactor5_25, String oficialDocumentation) {
+    public Gabinete(ObjectId id, ImageIcon imagen, String title, String marca, String FactorMother, String PowerFactor, boolean Window, int TypeWindow, boolean SoportWaterRadiator, int Width, int Height, int Length, int MaxSoportCoolerHeight, int SoportCoolersFan80, int SoportCoolersFan120, int SoportCoolersFan140, int SoportCoolersFan200, int SoportRadiator240, int SoportRadiator280, int SoportRadiator360, int SoportRadiator420, int StorageSlots, int SoportFactor2_5, int SoportFactor3_25, int SoportFactor3_5, int SoportFactor5_25, String oficialDocumentation) {
         super(id, imagen, title, marca, oficialDocumentation);
         this.FactorMother = FactorMother;
         this.PowerFactor = PowerFactor;
