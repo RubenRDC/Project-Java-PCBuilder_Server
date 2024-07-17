@@ -3,7 +3,7 @@ package com.rubenrdc.pcbuilderserver.dao;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
-import com.rubenrdc.pcbuilderserver.models.Cooler;
+import com.rubenrdc.pcbuilderserver.models.Almacenamiento;
 import static com.rubenrdc.pcbuilderserver.models.interfaces.Utilities.generateImageIcon;
 import java.util.ArrayList;
 import static java.util.Collections.sort;
@@ -17,25 +17,22 @@ import org.bson.types.ObjectId;
  *
  * @author Ruben
  */
-public class CoolerDao {
-     private static final DaoConnection dao = new DaoConnection();
+public class AlmacenamientoDao {
+    private static final DaoConnection dao = new DaoConnection();
 
-    public static List<Cooler> getListCooler(String socket) {
-        //String Family AMD/INTEL
+    public static List<Almacenamiento> getListAlmacenamiento(String Type) {
         if (dao.EstablecerC()) {
-            List<Cooler> list = new ArrayList<>();
+            List<Almacenamiento> list = new ArrayList<>();
             
-            Bson filter = Filters.regex("socket", socket);
-            
-            FindIterable<Document> genericQuery = dao.genericQuery("Cooler", filter);
+            FindIterable<Document> genericQuery = dao.genericQuery("Almacenamiento");
             
             MongoCursor<Document> iterator = genericQuery.iterator();
 
             while (iterator.hasNext()) {
                 Document doc = iterator.next();
                 ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-                list.add(new Cooler(doc.getObjectId("_id"), imagen, doc.getString("title"), doc.getString("marca"),
-                        doc.getString("type"), doc.getInteger("TDP")));
+                list.add(new Almacenamiento(doc.getObjectId("_id"), imagen, doc.getString("title"), doc.getString("marca"),
+                        doc.getString("type"), doc.getString("factor")));
             }
             sort(list);
             dao.closeCo();
@@ -44,9 +41,9 @@ public class CoolerDao {
         return null;
     }
 
-    public static Cooler getMoreInfo(ObjectId id) {
+    public static Almacenamiento getMoreInfo(ObjectId id) {
         if (dao.EstablecerC()) {
-            Cooler p = null;
+            Almacenamiento g = null;
 
             Bson filter = Filters.eq("_id", id);
             FindIterable<Document> genericQuery = dao.genericQuery("Cooler", filter);
@@ -55,21 +52,23 @@ public class CoolerDao {
             if (doc != null) {
                 ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
 
-                p = new Cooler(doc.getObjectId("_id"),
+                g = new Almacenamiento(doc.getObjectId("_id"),
                         imagen, doc.getString("title"),
                         doc.getString("marca"),
-                        doc.getInteger("TDP"),
-                        doc.getInteger("highCooler"),
-                        doc.getInteger("sizeCooler"),
-                        doc.getInteger("sizeCoolerFans"),
-                        doc.getInteger("energyConsumption"),
-                        doc.getInteger("coolersFans"),
-                        doc.getString("socket"),
                         doc.getString("type"),
+                        doc.getString("factor"),
+                        doc.getString("connectionType"),
+                        doc.getString("interface"),
+                        doc.getInteger("capacity"),
+                        doc.getInteger("cache"),
+                        doc.getInteger("maxReadSquential"),
+                        doc.getInteger("maxWriteSquential"),
+                        doc.getInteger("energyConsumption"),
+                        doc.getInteger("usefulLife"),
                         doc.getString("oficialDocumentation"));
             }
             dao.closeCo();
-            return p;
+            return g;
         }
         return null;
     }

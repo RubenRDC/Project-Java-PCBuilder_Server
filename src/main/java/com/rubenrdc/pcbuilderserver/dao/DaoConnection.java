@@ -28,6 +28,10 @@ public class DaoConnection {
         MongoCollection<Document> collection = database.getCollection(ColletionName);
         return collection.find(filter);
     }
+    public FindIterable<Document> genericQuery(String ColletionName) {
+        MongoCollection<Document> collection = database.getCollection(ColletionName);
+        return collection.find();
+    }
 
     public boolean EstablecerC() {
         try {
