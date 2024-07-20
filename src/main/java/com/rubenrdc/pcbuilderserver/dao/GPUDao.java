@@ -20,13 +20,11 @@ import org.bson.types.ObjectId;
 public class GPUDao {
     private static final DaoConnection dao = new DaoConnection();
 
-    public static List<GPU> getListGPU(String Type) {
+    public static List<GPU> getListGPU() {
         if (dao.EstablecerC()) {
             List<GPU> list = new ArrayList<>();
             
-            Bson filter = Filters.eq("type", Type);
-            
-            FindIterable<Document> genericQuery = dao.genericQuery("GPU", filter);
+            FindIterable<Document> genericQuery = dao.genericQuery("GPU");
             
             MongoCursor<Document> iterator = genericQuery.iterator();
 
@@ -34,7 +32,7 @@ public class GPUDao {
                 Document doc = iterator.next();
                 ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
                 list.add(new GPU(doc.getObjectId("_id"), imagen, doc.getString("title"), doc.getString("marca"),
-                        doc.getString("typeMemory"), doc.getInteger("memoryVRam")));
+                        doc.getString("typeMemory"), doc.getInteger("memoryVRam"),doc.getInteger("length")));
             }
             sort(list);
             dao.closeCo();

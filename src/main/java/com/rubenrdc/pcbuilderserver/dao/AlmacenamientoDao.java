@@ -20,7 +20,7 @@ import org.bson.types.ObjectId;
 public class AlmacenamientoDao {
     private static final DaoConnection dao = new DaoConnection();
 
-    public static List<Almacenamiento> getListAlmacenamiento(String Type) {
+    public static List<Almacenamiento> getListAlmacenamiento() {
         if (dao.EstablecerC()) {
             List<Almacenamiento> list = new ArrayList<>();
             

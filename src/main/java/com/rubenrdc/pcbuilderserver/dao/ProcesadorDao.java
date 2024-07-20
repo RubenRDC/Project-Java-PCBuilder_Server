@@ -3,7 +3,6 @@ package com.rubenrdc.pcbuilderserver.dao;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
-import com.rubenrdc.pcbuilderserver.models.MotherBoard;
 import com.rubenrdc.pcbuilderserver.models.Procesador;
 import com.rubenrdc.pcbuilderserver.models.interfaces.Utilities;
 import static com.rubenrdc.pcbuilderserver.models.interfaces.Utilities.generateImageIcon;
@@ -28,7 +27,7 @@ public class ProcesadorDao implements Utilities{
             List<Procesador> list = new ArrayList<>();
 
             Bson filter = Filters.eq("marca", family);
-
+            
             FindIterable<Document> genericQuery = dao.genericQuery("Procesador", filter);
 
             MongoCursor<Document> iterator = genericQuery.iterator();
@@ -37,7 +36,8 @@ public class ProcesadorDao implements Utilities{
                 Document doc = iterator.next();
                 ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
                 list.add(new Procesador(doc.getObjectId("_id"), imagen, doc.getString("title"), doc.getString("marca"),
-                        doc.getInteger("ncores"), doc.getInteger("nThreads"),doc.getDouble("frequencyTurbo")));
+                        doc.getInteger("ncores"), doc.getInteger("nThreads"),doc.getDouble("frequencyTurbo"),
+                        doc.getString("socket"),doc.getInteger("TDP"),doc.getBoolean("includeCooler")));
             }
             sort(list);
             dao.closeCo();

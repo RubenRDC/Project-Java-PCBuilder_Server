@@ -22,17 +22,15 @@ public class MotherBoardDao implements Utilities {
 
     private static final DaoConnection dao = new DaoConnection();
 
-    public static List<MotherBoard> getListMothers(String family, String socket) {
+    public static List<MotherBoard> getListMothers(String socket) {
         //String Family AMD/INTEL
         //Socket AM4/AM5
         if (dao.EstablecerC()) {
             List<MotherBoard> list = new ArrayList<>();
 
-            Bson filter1 = Filters.eq("family", family);
-            Bson filter2 = Filters.eq("socket", socket);
-            Bson filters = Filters.and(filter1, filter2);
+            Bson filter = Filters.eq("socket", socket);
 
-            FindIterable<Document> genericQuery = dao.genericQuery("MotherBoard", filters);
+            FindIterable<Document> genericQuery = dao.genericQuery("MotherBoard", filter);
 
             MongoCursor<Document> iterator = genericQuery.iterator();
 
