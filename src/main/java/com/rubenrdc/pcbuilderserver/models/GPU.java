@@ -21,10 +21,11 @@ public class GPU extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public GPU(ObjectId id, ImageIcon imagen, String title, String marca, String TypeMemory, int MemoryVRam) {
+    public GPU(ObjectId id, ImageIcon imagen, String title, String marca, String TypeMemory, int MemoryVRam,int Length) {
         super(id, imagen, title, marca);
         this.TypeMemory = TypeMemory;
         this.MemoryVRam = MemoryVRam;
+        this.Length=Length;
     }
 
     //Complete Info

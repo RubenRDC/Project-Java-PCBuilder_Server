@@ -11,12 +11,12 @@ import org.bson.types.ObjectId;
 public class Gabinete extends Articulo implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private String FactorMother, PowerFactor,TypeWindow;
+    private String FactorMother, PowerFactor, TypeWindow;
     private boolean Window, SoportWaterRadiator;
     private int Width, Height, Length, MaxSoportCoolerHeight, SoportCoolersFan80,
             SoportCoolersFan120, SoportCoolersFan140, SoportCoolersFan200, SoportRadiator240, SoportRadiator280,
             SoportRadiator360, SoportRadiator420, StorageSlots, SoportFactor2_5,
-            SoportFactor3_25, SoportFactor3_5, SoportFactor5_25;
+            SoportFactor3_25, SoportFactor3_5, SoportFactor5_25, LengthMaxGPU;
     private Object row[];
 
     public Gabinete(String title, String marca) {
@@ -31,7 +31,7 @@ public class Gabinete extends Articulo implements Serializable {
     }
 
     //Complete Info
-    public Gabinete(ObjectId id, ImageIcon imagen, String title, String marca, String FactorMother, String PowerFactor, boolean Window, String TypeWindow, boolean SoportWaterRadiator, int Width, int Height, int Length, int MaxSoportCoolerHeight, int SoportCoolersFan80, int SoportCoolersFan120, int SoportCoolersFan140, int SoportCoolersFan200, int SoportRadiator240, int SoportRadiator280, int SoportRadiator360, int SoportRadiator420, int StorageSlots, int SoportFactor2_5, int SoportFactor3_25, int SoportFactor3_5, int SoportFactor5_25, String oficialDocumentation) {
+    public Gabinete(ObjectId id, ImageIcon imagen, String title, String marca, String FactorMother, String PowerFactor, boolean Window, String TypeWindow, boolean SoportWaterRadiator, int Width, int Height, int Length, int MaxSoportCoolerHeight, int SoportCoolersFan80, int SoportCoolersFan120, int SoportCoolersFan140, int SoportCoolersFan200, int SoportRadiator240, int SoportRadiator280, int SoportRadiator360, int SoportRadiator420, int StorageSlots, int SoportFactor2_5, int SoportFactor3_25, int SoportFactor3_5, int SoportFactor5_25,int LengthMaxGPU, String oficialDocumentation) {
         super(id, imagen, title, marca, oficialDocumentation);
         this.FactorMother = FactorMother;
         this.PowerFactor = PowerFactor;
@@ -55,6 +55,7 @@ public class Gabinete extends Articulo implements Serializable {
         this.SoportFactor3_25 = SoportFactor3_25;
         this.SoportFactor3_5 = SoportFactor3_5;
         this.SoportFactor5_25 = SoportFactor5_25;
+        this.LengthMaxGPU=LengthMaxGPU;
     }
 
     public String getFactorMother() {
@@ -143,6 +144,10 @@ public class Gabinete extends Articulo implements Serializable {
 
     public int getSoportFactor5_25() {
         return SoportFactor5_25;
+    }
+
+    public int getLengthMaxGPU() {
+        return LengthMaxGPU;
     }
 
     public Object[] getRow() {

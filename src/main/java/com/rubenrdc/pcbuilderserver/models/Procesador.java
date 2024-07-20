@@ -22,11 +22,14 @@ public class Procesador extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Procesador(ObjectId id, ImageIcon imagen, String title, String marca, int Ncores, int NThreads, double frequencyTurbo) {
+    public Procesador(ObjectId id, ImageIcon imagen, String title, String marca, int Ncores, int NThreads, double frequencyTurbo,String Socket,int TDP,Boolean includeCooler) {
         super(id, imagen, title, marca);
         this.Ncores = Ncores;
         this.NThreads = NThreads;
         this.frequencyTurbo = frequencyTurbo;
+        this.Socket=Socket;
+        this.TDP=TDP;
+        this.includeCooler=includeCooler;
     }
 
     //Complete Info

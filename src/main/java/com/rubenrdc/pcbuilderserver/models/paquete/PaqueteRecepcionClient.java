@@ -14,12 +14,18 @@ public class PaqueteRecepcionClient<T extends Articulo> extends Paquete implemen
     private final int TYPE_PAQ, TYPE_ART, STATUS_CODE;
     private List<T> listArts;
     private T artCompl;
-
+    
     public PaqueteRecepcionClient(int STATUS_CODE, int TYPE_PAQ, int TYPE_ART, List<T> listArt) {
         this.STATUS_CODE = STATUS_CODE;
         this.TYPE_PAQ = TYPE_PAQ;
         this.TYPE_ART = TYPE_ART;
         this.listArts = listArt;
+    }
+    
+    public PaqueteRecepcionClient(int STATUS_CODE, int TYPE_PAQ, int TYPE_ART) {
+        this.STATUS_CODE = STATUS_CODE;
+        this.TYPE_PAQ = TYPE_PAQ;
+        this.TYPE_ART = TYPE_ART;
     }
 
     public PaqueteRecepcionClient(int STATUS_CODE, int TYPE_PAQ, int TYPE_ART, T artCompl) {
@@ -32,7 +38,7 @@ public class PaqueteRecepcionClient<T extends Articulo> extends Paquete implemen
     public int getSTATUS_CODE() {
         return STATUS_CODE;
     }
-    
+
     public List<T> getListArts() {
         return listArts;
     }
@@ -48,5 +54,6 @@ public class PaqueteRecepcionClient<T extends Articulo> extends Paquete implemen
     public int getTYPE_ART() {
         return TYPE_ART;
     }
+    
 
 }

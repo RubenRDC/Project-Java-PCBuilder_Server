@@ -20,13 +20,17 @@ public class Cooler extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Cooler(ObjectId id, ImageIcon imagen, String title, String marca, String Type, int TDP) {
+    public Cooler(ObjectId id, ImageIcon imagen, String title, String marca, String Type, int TDP, int highCooler, int CoolersFans, int sizeCoolerFans) {
         super(id, imagen, title, marca);
         this.Type = Type;
         this.TDP = TDP;
+        this.highCooler=highCooler;
+        this.CoolersFans=CoolersFans;
+        this.sizeCoolerFans=sizeCoolerFans;
     }
+
     //Complete Info
-    public Cooler(ObjectId id, ImageIcon imagen, String title, String marca,int TDP, int highCooler, int sizeCooler, int sizeCoolerFans, int EnergyConsumption, int CoolersFans, String Socket, String Type,String oficialDocumentation) {
+    public Cooler(ObjectId id, ImageIcon imagen, String title, String marca, int TDP, int highCooler, int sizeCooler, int sizeCoolerFans, int EnergyConsumption, int CoolersFans, String Socket, String Type, String oficialDocumentation) {
         super(id, imagen, title, marca, oficialDocumentation);
         this.TDP = TDP;
         this.highCooler = highCooler;
@@ -37,7 +41,7 @@ public class Cooler extends Articulo implements Serializable {
         this.Socket = Socket;
         this.Type = Type;
     }
-    
+
     public int getTDP() {
         return TDP;
     }
