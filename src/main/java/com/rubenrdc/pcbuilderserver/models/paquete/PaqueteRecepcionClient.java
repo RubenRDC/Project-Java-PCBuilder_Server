@@ -1,6 +1,6 @@
 package com.rubenrdc.pcbuilderserver.models.paquete;
 
-import com.rubenrdc.pcbuilderserver.models.Articulo;
+import com.rubenrdc.pcbuilder.models.Articulo;
 import java.util.List;
 import java.io.Serializable;
 

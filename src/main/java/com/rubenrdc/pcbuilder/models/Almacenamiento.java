@@ -1,7 +1,6 @@
-package com.rubenrdc.pcbuilderserver.models;
+package com.rubenrdc.pcbuilder.models;
 
 import java.io.Serializable;
-import javax.swing.ImageIcon;
 import org.bson.types.ObjectId;
 
 /**
@@ -24,13 +23,13 @@ public class Almacenamiento extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Almacenamiento(ObjectId id, ImageIcon imagen, String title, String marca, String Type, String Factor) {
+    public Almacenamiento(ObjectId id, String imagen, String title, String marca, String Type, String Factor) {
         super(id, imagen, title, marca);
         this.Type = Type;
         this.Factor = Factor;
     }
     //Complete Info
-    public Almacenamiento(ObjectId id, ImageIcon imagen, String title, String marca, String Type, String Factor,String ConnectionType,String Interface,int Capacity,int Cache,int MaxReadSquential,int MaxWriteSquential,int EnergyConsumption,int UsefulLife,String oficialDocumentation) {
+    public Almacenamiento(ObjectId id, String imagen, String title, String marca, String Type, String Factor,String ConnectionType,String Interface,int Capacity,int Cache,int MaxReadSquential,int MaxWriteSquential,int EnergyConsumption,int UsefulLife,String oficialDocumentation) {
         super(id, imagen, title, marca,oficialDocumentation);
         this.Type = Type;
         this.Factor = Factor;

@@ -3,12 +3,10 @@ package com.rubenrdc.pcbuilderserver.dao;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
-import com.rubenrdc.pcbuilderserver.models.Ram;
-import static com.rubenrdc.pcbuilderserver.models.interfaces.Utilities.generateImageIcon;
+import com.rubenrdc.pcbuilder.models.Ram;
 import java.util.ArrayList;
 import static java.util.Collections.sort;
 import java.util.List;
-import javax.swing.ImageIcon;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
@@ -32,8 +30,7 @@ public class RamDao {
 
             while (iterator.hasNext()) {
                 Document doc = iterator.next();
-                ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-                list.add(new Ram(doc.getObjectId("_id"), imagen, doc.getString("title"), doc.getString("marca"),
+                list.add(new Ram(doc.getObjectId("_id"), doc.getString("imagen"), doc.getString("title"), doc.getString("marca"),
                         doc.getInteger("capacity"), doc.getInteger("frequencyRam")));
             }
             sort(list);
@@ -52,10 +49,9 @@ public class RamDao {
             Document doc = genericQuery.first();
 
             if (doc != null) {
-                ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-
                 p = new Ram(doc.getObjectId("_id"),
-                        imagen, doc.getString("title"),
+                        doc.getString("imagen"),
+                        doc.getString("title"),
                         doc.getString("marca"),
                         doc.getInteger("frequencyRam"),
                         doc.getInteger("capacity"),

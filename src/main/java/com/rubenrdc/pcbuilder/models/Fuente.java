@@ -1,7 +1,6 @@
-package com.rubenrdc.pcbuilderserver.models;
+package com.rubenrdc.pcbuilder.models;
 
 import java.io.Serializable;
-import javax.swing.ImageIcon;
 import org.bson.types.ObjectId;
 
 /**
@@ -21,13 +20,13 @@ public class Fuente extends Articulo implements Serializable {
     }
     
     //Basic Information
-    public Fuente(ObjectId id,ImageIcon imagen, String title, String marca, int RealWatts, String Factor) {
+    public Fuente(ObjectId id,String imagen, String title, String marca, int RealWatts, String Factor) {
         super(id,imagen, title, marca);
         this.RealWatts = RealWatts;
         this.Factor = Factor;
     }
     //Complete Info
-    public Fuente(ObjectId id, ImageIcon imagen, String title, String marca,int RatedWatts, int RealWatts, int SataConnections, String WiringType, String Certification, String Factor, boolean Pin24Connector, boolean IncludeCable, String oficialDocumentation) {
+    public Fuente(ObjectId id, String imagen, String title, String marca,int RatedWatts, int RealWatts, int SataConnections, String WiringType, String Certification, String Factor, boolean Pin24Connector, boolean IncludeCable, String oficialDocumentation) {
         super(id, imagen, title, marca, oficialDocumentation);
         this.RatedWatts = RatedWatts;
         this.RealWatts = RealWatts;

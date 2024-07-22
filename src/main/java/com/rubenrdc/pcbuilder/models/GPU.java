@@ -1,7 +1,6 @@
-package com.rubenrdc.pcbuilderserver.models;
+package com.rubenrdc.pcbuilder.models;
 
 import java.io.Serializable;
-import javax.swing.ImageIcon;
 import org.bson.types.ObjectId;
 
 /**
@@ -21,7 +20,7 @@ public class GPU extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public GPU(ObjectId id, ImageIcon imagen, String title, String marca, String TypeMemory, int MemoryVRam,int Length) {
+    public GPU(ObjectId id, String imagen, String title, String marca, String TypeMemory, int MemoryVRam,int Length) {
         super(id, imagen, title, marca);
         this.TypeMemory = TypeMemory;
         this.MemoryVRam = MemoryVRam;
@@ -29,7 +28,7 @@ public class GPU extends Articulo implements Serializable {
     }
 
     //Complete Info
-    public GPU(ObjectId id, ImageIcon imagen, String title, String marca, String Type, String ChipsetGpu, String TypeMemory, int VGA, int DVI, int HDMI, int DisplayPorts, int Height, int Length, int EnergyConsumption, int MemoryVRam, int SpeedMemory, int RecommMinimWatts, String oficialDocumentation) {
+    public GPU(ObjectId id, String imagen, String title, String marca, String Type, String ChipsetGpu, String TypeMemory, int VGA, int DVI, int HDMI, int DisplayPorts, int Height, int Length, int EnergyConsumption, int MemoryVRam, int SpeedMemory, int RecommMinimWatts, String oficialDocumentation) {
         super(id, imagen, title, marca, oficialDocumentation);
         this.Type = Type;
         this.ChipsetGpu = ChipsetGpu;

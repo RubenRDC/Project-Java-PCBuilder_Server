@@ -3,13 +3,10 @@ package com.rubenrdc.pcbuilderserver.dao;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
-import com.rubenrdc.pcbuilderserver.models.MotherBoard;
-import com.rubenrdc.pcbuilderserver.models.interfaces.Utilities;
-import static com.rubenrdc.pcbuilderserver.models.interfaces.Utilities.*;
+import com.rubenrdc.pcbuilder.models.MotherBoard;
 import java.util.ArrayList;
 import static java.util.Collections.sort;
 import java.util.List;
-import javax.swing.ImageIcon;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
@@ -18,7 +15,7 @@ import org.bson.types.ObjectId;
  *
  * @author Ruben
  */
-public class MotherBoardDao implements Utilities {
+public class MotherBoardDao {
 
     private static final DaoConnection dao = new DaoConnection();
 
@@ -36,8 +33,7 @@ public class MotherBoardDao implements Utilities {
 
             while (iterator.hasNext()) {
                 Document doc = iterator.next();
-                ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-                list.add(new MotherBoard(doc.getObjectId("_id"), imagen, doc.getString("title"), doc.getString("marca"),
+                list.add(new MotherBoard(doc.getObjectId("_id"), doc.getString("imagen"), doc.getString("title"), doc.getString("marca"),
                         doc.getString("chipset"), doc.getString("factor")));
             }
             sort(list);
@@ -56,10 +52,9 @@ public class MotherBoardDao implements Utilities {
             Document doc = genericQuery.first();
 
             if (doc != null) {
-                ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-
                 mother = new MotherBoard(doc.getObjectId("_id"),
-                        imagen, doc.getString("title"),
+                        doc.getString("imagen"),
+                        doc.getString("title"),
                         doc.getString("marca"),
                         doc.getString("chipset"),
                         doc.getString("factor"),

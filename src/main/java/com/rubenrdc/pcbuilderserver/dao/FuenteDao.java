@@ -3,12 +3,10 @@ package com.rubenrdc.pcbuilderserver.dao;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
-import com.rubenrdc.pcbuilderserver.models.Fuente;
-import static com.rubenrdc.pcbuilderserver.models.interfaces.Utilities.generateImageIcon;
+import com.rubenrdc.pcbuilder.models.Fuente;
 import java.util.ArrayList;
 import static java.util.Collections.sort;
 import java.util.List;
-import javax.swing.ImageIcon;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
@@ -32,8 +30,7 @@ public class FuenteDao {
 
             while (iterator.hasNext()) {
                 Document doc = iterator.next();
-                ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-                list.add(new Fuente(doc.getObjectId("_id"), imagen, doc.getString("title"), doc.getString("marca"),
+                list.add(new Fuente(doc.getObjectId("_id"), doc.getString("imagen"), doc.getString("title"), doc.getString("marca"),
                         doc.getInteger("realWatts"), doc.getString("factor")));
             }
             sort(list);
@@ -52,10 +49,9 @@ public class FuenteDao {
             Document doc = genericQuery.first();
 
             if (doc != null) {
-                ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-
                 f = new Fuente(doc.getObjectId("_id"),
-                        imagen, doc.getString("title"),
+                        doc.getString("imagen"),
+                        doc.getString("title"),
                         doc.getString("marca"),
                         doc.getInteger("ratedWatts"),
                         doc.getInteger("realWatts"),

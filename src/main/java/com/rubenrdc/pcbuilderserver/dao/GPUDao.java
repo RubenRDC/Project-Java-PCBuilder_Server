@@ -3,12 +3,10 @@ package com.rubenrdc.pcbuilderserver.dao;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
-import com.rubenrdc.pcbuilderserver.models.GPU;
-import static com.rubenrdc.pcbuilderserver.models.interfaces.Utilities.generateImageIcon;
+import com.rubenrdc.pcbuilder.models.GPU;
 import java.util.ArrayList;
 import static java.util.Collections.sort;
 import java.util.List;
-import javax.swing.ImageIcon;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
@@ -30,8 +28,7 @@ public class GPUDao {
 
             while (iterator.hasNext()) {
                 Document doc = iterator.next();
-                ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-                list.add(new GPU(doc.getObjectId("_id"), imagen, doc.getString("title"), doc.getString("marca"),
+                list.add(new GPU(doc.getObjectId("_id"),doc.getString("imagen"), doc.getString("title"), doc.getString("marca"),
                         doc.getString("typeMemory"), doc.getInteger("memoryVRam"),doc.getInteger("length")));
             }
             sort(list);
@@ -50,10 +47,9 @@ public class GPUDao {
             Document doc = genericQuery.first();
 
             if (doc != null) {
-                ImageIcon imagen = generateImageIcon(doc.getString("imagen"));
-
                 g = new GPU(doc.getObjectId("_id"),
-                        imagen, doc.getString("title"),
+                        doc.getString("imagen"),
+                        doc.getString("title"),
                         doc.getString("marca"),
                         doc.getString("type"),
                         doc.getString("chipsetGpu"),

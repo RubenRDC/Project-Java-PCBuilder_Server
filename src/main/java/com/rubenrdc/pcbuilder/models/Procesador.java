@@ -1,7 +1,6 @@
-package com.rubenrdc.pcbuilderserver.models;
+package com.rubenrdc.pcbuilder.models;
 
 import java.io.Serializable;
-import javax.swing.ImageIcon;
 import org.bson.types.ObjectId;
 
 /**
@@ -22,7 +21,7 @@ public class Procesador extends Articulo implements Serializable {
     }
 
     //Basic Information
-    public Procesador(ObjectId id, ImageIcon imagen, String title, String marca, int Ncores, int NThreads, double frequencyTurbo,String Socket,int TDP,Boolean includeCooler) {
+    public Procesador(ObjectId id, String imagen, String title, String marca, int Ncores, int NThreads, double frequencyTurbo,String Socket,int TDP,Boolean includeCooler) {
         super(id, imagen, title, marca);
         this.Ncores = Ncores;
         this.NThreads = NThreads;
@@ -33,7 +32,7 @@ public class Procesador extends Articulo implements Serializable {
     }
 
     //Complete Info
-    public Procesador(ObjectId id, ImageIcon imagen, String title, String marca, int Ncores, int NThreads, int TDP, int frequencyMaxRam, double frequencyBase, double frequencyTurbo, String ChipsetGPU, String Socket, String TypeMemory, String Family, boolean includeCooler, String oficialDocumentation) {
+    public Procesador(ObjectId id, String imagen, String title, String marca, int Ncores, int NThreads, int TDP, int frequencyMaxRam, double frequencyBase, double frequencyTurbo, String ChipsetGPU, String Socket, String TypeMemory, String Family, boolean includeCooler, String oficialDocumentation) {
         super(id, imagen, title, marca, oficialDocumentation);
         this.Ncores = Ncores;
         this.NThreads = NThreads;
