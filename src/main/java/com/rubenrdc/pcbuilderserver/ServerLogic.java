@@ -35,6 +35,7 @@ import org.bson.types.ObjectId;
  */
 public class ServerLogic {
 
+    private ServerSocket ServerS;
     private final int port;//8765
 
     public ServerLogic(int port) {
@@ -44,11 +45,17 @@ public class ServerLogic {
     public void startServerThread() {
 
         Thread r = new Thread(new Runnable() {
+
             @Override
             public void run() {
                 try {
+                    if (ServerS != null) {
+                        if (!ServerS.isClosed()) {
+                            ServerS.close();
+                        }
+                    }
+                    ServerS = new ServerSocket(port);
                     System.out.println("-Servidor Iniciado-");
-                    ServerSocket ServerS = new ServerSocket(port);
                     ObjectInputStream inputStream;
                     ObjectOutputStream OutputStream;
                     Socket accept;
@@ -162,5 +169,5 @@ public class ServerLogic {
             return Paquete.SCODE_NO_FOUND;
         }
     }
-    
+
 }

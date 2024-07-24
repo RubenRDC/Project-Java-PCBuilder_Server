@@ -25,7 +25,7 @@ public class CoolerDao {
             List<Cooler> list = new ArrayList<>();
             
             Bson filter = Filters.regex("socket", (String)socketAndTdpCpu.get("socketCPU"));
-            Bson filter2 = Filters.gte("socket", (String)socketAndTdpCpu.get("TDPCPU"));
+            Bson filter2 = Filters.gte("TDP", socketAndTdpCpu.get("TDPCPU"));
             Bson filterAnd = Filters.and(filter,filter2);
             
             FindIterable<Document> genericQuery = dao.genericQuery("Cooler", filterAnd);

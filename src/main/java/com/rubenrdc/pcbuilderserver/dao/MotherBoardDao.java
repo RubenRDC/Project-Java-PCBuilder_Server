@@ -34,7 +34,7 @@ public class MotherBoardDao {
             while (iterator.hasNext()) {
                 Document doc = iterator.next();
                 list.add(new MotherBoard(doc.getObjectId("_id"), doc.getString("imagen"), doc.getString("title"), doc.getString("marca"),
-                        doc.getString("chipset"), doc.getString("factor")));
+                        doc.getString("chipset"), doc.getString("factor"),doc.getString("memoryType"),doc.getInteger("memorySlots")));
             }
             sort(list);
             dao.closeCo();
