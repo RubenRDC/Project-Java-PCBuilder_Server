@@ -90,7 +90,7 @@ public class GabineteDao {
                         doc.getInteger("soportFactor2_5"),
                         doc.getInteger("soportFactor3_25"),
                         doc.getInteger("soportFactor3_5"),
-                        doc.getInteger("SoportFactor5_25"),
+                        doc.getInteger("soportFactor5_25"),
                         doc.getInteger("lengthMaxGPU"),
                         doc.getString("oficialDocumentation"));
             }
