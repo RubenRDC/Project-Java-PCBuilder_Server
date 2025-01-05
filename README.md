@@ -4,12 +4,12 @@
 
   
 <h3>Lenguaje de desarrollo:</h3>
-<img align="center" src="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/java.svg?token=GHSAT0AAAAAACRFSMR4GU32XPT7224UREH2ZVFTIZA" height="40"></img>
+<img align="center" src="https://raw.githubusercontent.com/RubenRDC/rdcpictures/refs/heads/master/pictures/java.svg" height="40"></img>
 <h3>Herramientas Utilizadas:</h3>
 <div align="center">
-<img src ="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/Apache_NetBeans_Logo.svg?token=GHSAT0AAAAAACRFSMR4OS377HODE3TBGGOAZVFTGBQ" height="40"></img>
-<img src ="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/github.svg?token=GHSAT0AAAAAACRFSMR4H4RX3RZQEQEFS5SUZVFTF6Q" height="40"></img>
-<img src ="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/git.svg?token=GHSAT0AAAAAACRFSMR46MYGD64M4OSA3U7GZVFTGAA" height="40"></img>
+<img src ="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/Apache_NetBeans_Logo.svg" height="40"></img>
+<img src ="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/github.svg" height="40"></img>
+<img src ="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/git.svg" height="40"></img>
 <img src ="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/MongoDBCompass_Logo.svg" height="40"></img> 
 <img src ="https://raw.githubusercontent.com/RubenRDC/rdcpictures/master/pictures/Apache_Maven_logo.svg" height="40"></img> 
 </div>
